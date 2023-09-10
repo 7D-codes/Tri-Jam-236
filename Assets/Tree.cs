@@ -13,6 +13,8 @@ public class Tree : MonoBehaviour
     {
         wood = UnityEngine.Random.Range(2, 11); // Randomize wood value between 2 and 10
         Debug.Log("This tree has " + wood + " wood.");
+        gameHandler = GameObject.Find("GameHandler").GetComponent<GameHandler>();
+        gameHandler.trees++;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +45,7 @@ public class Tree : MonoBehaviour
             else
             {
                 Destroy(gameObject);
+                gameHandler.trees--;
             }
             
         }

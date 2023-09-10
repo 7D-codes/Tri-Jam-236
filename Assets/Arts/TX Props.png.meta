@@ -139,12 +139,12 @@ TextureImporter:
       name: TX Props_0
       rect:
         serializedVersion: 2
-        x: 164
-        y: 197
-        width: 25
-        height: 27
+        x: 453
+        y: 357
+        width: 22
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

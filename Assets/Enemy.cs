@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     private bool isIdle = true;
     private Vector3 startPosition;
     private Vector3 targetPosition;
-    private float lerpTime = 2.0f;
 
     void Start()
     {
