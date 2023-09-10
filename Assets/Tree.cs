@@ -5,9 +5,10 @@ using UnityEngine;
 public class Tree : MonoBehaviour
 {
     public GameHandler gameHandler;
+    public AudioSource Chop; // Assign the Chop audio source in the Inspector
     private int wood;
 
-    bool isin =false;
+    bool isin = false;
 
     void Start()
     {
@@ -39,6 +40,9 @@ public class Tree : MonoBehaviour
         {
             if (wood > 0)
             {
+                // Play the Chop sound once every time the space key is pressed
+                Chop.Play();
+                
                 gameHandler.AddWood(1);
                 wood--;
             }
@@ -47,7 +51,6 @@ public class Tree : MonoBehaviour
                 Destroy(gameObject);
                 gameHandler.trees--;
             }
-            
         }
     }
 }

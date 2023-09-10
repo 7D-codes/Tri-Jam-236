@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     [Header("Resources")]
     public GameHandler gameHandler;
-    
     Animator animator;
     Rigidbody2D rb;
 
@@ -65,6 +64,14 @@ public class Player : MonoBehaviour
         else if (horizontalInput > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            RemoveHealth(2);
         }
     }
 

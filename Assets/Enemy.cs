@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform Target;
+    public Player Player;
     public float speed;
     public float visionRadius = 5.0f;
     public LayerMask playerLayer;
@@ -38,6 +39,15 @@ public class Enemy : MonoBehaviour
         else if (!isIdle)
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.position, speed * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //audio
+            Player.RemoveHealth(2);
         }
     }
 
